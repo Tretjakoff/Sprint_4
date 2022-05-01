@@ -15,17 +15,19 @@ public class AccountTest {
         return new Object[][]{
                 {"Иван Иванов", true},
                 {"Vasiliy Sidorov", true},
-                {"Иван Иванов ", false},
-                {" Иван Иванов", false},
+                {"Иван  Иванов", false},
+                {" ИванИванов", false},
+                {"ИванИванов ", false},
                 {"ИванИванов", false},
                 {" Иван Иванов ", false},
-                {"Алла-Виктория Браун", true},
-                {"Алла-Виктория Картер", false},
+                {"Абвгдеёжзиклм Браун", true},
+                {"Абвгдеёжзиклмн Браун", false},
                 {"q w", true},
                 {"q ", false},
                 {" q", false},
                 {"", false},
                 {" ", false},
+                {null, false},
         };
     }
     public AccountTest(String fullName, boolean expected) {
